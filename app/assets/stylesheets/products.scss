@@ -39,7 +39,6 @@
 .gallery .item {
   margin: 5px;
   border: 1px solid #ccc;
-  // float: left;
   width: 180px;
 }
 
@@ -56,6 +55,7 @@
   padding: 15px;
   text-align: center;
 }
+
 .gallery {
   display: flex;
 }
@@ -84,3 +84,11 @@
   // color: white;
 }
 
+// .product-item p {
+//   text-align: left;
+// }
+
+.product-item-img {
+  width: 35%;
+  height: auto;
+}

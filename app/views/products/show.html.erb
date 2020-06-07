@@ -1,20 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="product-item center">
+  <%= image_tag"#{@product.image}", alt: "#{@product.name}", class: "product-item-img" %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
 
-<p>
-  <strong>price:</strong>
-  <%= number_to_currency(@product.price) %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <p>
+    <strong>price:</strong>
+    <%= number_to_currency(@product.price) %>
+  </p>
 
+  <p>
+    <% if current_user.admin %>
+      <%= link_to "Edit", edit_product_path(@product) %>
+    <% end %>
+  </p>
+  <p>
+    <%= link_to "Back to  All Products", products_path %>
+  </p>
+</div>

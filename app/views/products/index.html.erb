@@ -7,7 +7,7 @@
     <% @products.each do |product| %>
       <div class="item">
         <a href="#" onclick='showModal(<%="#{product.to_json}"%>)'>
-          <%= image_tag "#{product[:image]}", alt: "#{product[:name]}" %>
+          <%= link_to(image_tag("#{product[:image]}", alt: "#{product[:name]}"), product_path(product.id)) %>
         </a>
         <div class="desc"><%="#{product[:name]}"%></div>
       </div>
@@ -21,5 +21,5 @@
     </div>
   </div>
 
-<%= javascript_include_tag "productModal.js" %>
+<%# <%= javascript_include_tag "productModal.js" %1> %>
 

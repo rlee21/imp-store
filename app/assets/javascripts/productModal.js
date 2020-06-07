@@ -9,7 +9,6 @@ function showModal(product) {
 
 function updateProductDescription(product) {
   productDescription.innerHTML = `
-    ${product.status}<br>
     Name: ${product.name}<br>
     Description: ${product.description}<br>
     Price: ${product.price}<br>

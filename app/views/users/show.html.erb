@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hi <%= current_user.first_name %>!</h1>
+
+<div class="center">
+    <p>
+      <strong>First Name:</strong>
+      <%= @user.first_name %>
+    </p>
+
+    <p>
+      <strong>Last Name:</strong>
+      <%= @user.last_name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+
+  <p>
+    <strong>Giveaway Winner:</strong>
+    <%= @user.giveaway_winner %>
+  </p>
+
+<% if @user.admin %>
+  <p>
+    <%= button_to "Choose user to win Giveaway", users_path, method: :get, class: "choose-giveaway-btn" %>
+  </p>
+<% end %>
+
+<p>
+<%= link_to 'Edit Profile', edit_user_registration_path %>
+</p>
+  </div>
+</div>
