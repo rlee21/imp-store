@@ -1,7 +1,7 @@
 <h1>Search Results</h1>
   <ul class="search-results">
     <% @results.each do |result| %>
-      <li><%= result.name %></li>
+      <li><%= link_to result.name, product_path(result.id) %></li>
     <% end %>
   </ul>
 

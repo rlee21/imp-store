@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   get '/about',    to: 'static_pages#about'
+  get '/contact', to: 'static_pages#contact'
   get '/giveaway', to: 'static_pages#giveaway'
 end
