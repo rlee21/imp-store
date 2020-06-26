@@ -1,9 +1,18 @@
 <h1>Search Results</h1>
-  <ul class="search-results">
-    <% @results.each do |result| %>
-      <li><%= link_to result.name, product_path(result.id) %></li>
-    <% end %>
-  </ul>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="search-results">
+        <% @results.each do |result| %>
+          <div class="result">
+            <%= link_to(image_tag("#{result.image}", alt: "#{result.name}"), product_path(result.id)) %>
+              <div class="center">
+                <%="#{result.name}: #{number_to_currency(result.price)}" %>
+              </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 

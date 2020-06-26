@@ -92,3 +92,13 @@
   width: 35%;
   height: auto;
 }
+
+.search-results {
+  display: flex;
+}
+
+.result a img {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}

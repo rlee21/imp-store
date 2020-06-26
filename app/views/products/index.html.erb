@@ -3,23 +3,29 @@
 <%# </div> %>
 
 <h1>Products</h1>
-  <div class="gallery">
-    <% @products.each do |product| %>
-      <div class="item">
-        <a href="#" onclick='showModal(<%="#{product.to_json}"%>)'>
-          <%= link_to(image_tag("#{product[:image]}", alt: "#{product[:name]}"), product_path(product.id)) %>
-        </a>
-        <div class="desc"><%="#{product[:name]}"%></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="gallery">
+        <% @products.each do |product| %>
+          <div class="item">
+            <a href="#" onclick='showModal(<%="#{product.to_json}"%>)'>
+              <%= link_to(image_tag("#{product[:image]}", alt: "#{product[:name]}"), product_path(product.id)) %>
+            </a>
+            <div class="desc"><%="#{product[:name]}"%></div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 
-  <div id="product-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="removeModal()">&times;</span>
-      <p class="product-description">product description placeholder</p>
+      <div id="product-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="removeModal()">&times;</span>
+          <p class="product-description">product description placeholder</p>
+        </div>
+      </div>
+
+      <%# <%= javascript_include_tag "productModal.js" %1> %>
+
+      </div>
     </div>
-  </div>
-
-<%# <%= javascript_include_tag "productModal.js" %1> %>
-
+</div>
